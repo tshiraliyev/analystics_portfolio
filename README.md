@@ -40,20 +40,20 @@ Satisfaction and Churn: Low satisfaction scores might correlate with higher exit
 
 SELECT
     CASE
-        WHEN Age < 30 THEN 'Under 30'
-        WHEN Age BETWEEN 30 AND 50 THEN '30-50'
-        WHEN Age > 50 THEN 'Over 50'
-    END AS "Age Group",
-    COUNT(*) AS "Total Customers",
-    COUNT(CASE WHEN Exited = 1 THEN 1 END) AS "Exited Customers",
-    ROUND(COUNT(CASE WHEN Exited = 1 THEN 1 END) * 100.0 / COUNT(*), 2) AS "Exit Rate"
-FROM customers
-GROUP BY
-    CASE
-        WHEN Age < 30 THEN 'Under 30'
-        WHEN Age BETWEEN 30 AND 50 THEN '30-50'
-        WHEN Age > 50 THEN 'Over 50'
-    END
+        WHEN Age < 30 THEN 'Under 30' <br>
+        WHEN Age BETWEEN 30 AND 50 THEN '30-50'<br>
+        WHEN Age > 50 THEN 'Over 50'<br>
+    END AS "Age Group",<br>
+    COUNT(*) AS "Total Customers",<br>
+    COUNT(CASE WHEN Exited = 1 THEN 1 END) AS "Exited Customers",<br>
+    ROUND(COUNT(CASE WHEN Exited = 1 THEN 1 END) * 100.0 / COUNT(*), 2) AS "Exit Rate"<br>
+FROM customers<br>
+GROUP BY<br>
+    CASE<br>
+        WHEN Age < 30 THEN 'Under 30'<br>
+        WHEN Age BETWEEN 30 AND 50 THEN '30-50'<br>
+        WHEN Age > 50 THEN 'Over 50'<br>
+    END<br>
 ORDER BY "Exit Rate" DESC;
 
 Explanation: This query categorizes customers into three age groups and calculates the exit rate for each.
