@@ -149,12 +149,12 @@ ORDER BY "Exit Rate" DESC; <br>
 Explanation: This query determines whether lower satisfaction scores correlate with higher churn rates.
 
 📊 Power BI: Visualization & Analysis <br>
-In Power BI, I created an interactive dashboard to analyze bank customer churn. It includes key metrics that help identify patterns among customers who have left the bank.
+In Power BI, I created an interactive dashboard to analyze bank customer churn. It includes key metrics that help identify patterns among customers who have left the bank.I also created some measures which helped in creating dashboard.
 
 ![image](https://github.com/user-attachments/assets/6158e646-5515-4d61-a6d5-8f481de0e475)
 
 
-🔹 Dashboard Includes:
+🔹 Dashboard Includes: <br>
 📌 Churn Rate by Age Group – Identifies which age groups are most likely to leave. <br>
 📌 Churn Rate by Satisfaction Score – Analyzes the impact of satisfaction levels on retention. <br>
 📌 Donut Chart by Card Type – Distribution of customers based on card type (Gold, Silver, Platinum, Diamond). <br>
