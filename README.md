@@ -63,77 +63,88 @@ Explanation: This query categorizes customers into three age groups and calculat
 
 2️⃣ Churn Rate by Gender
 
-SELECT
-    Gender,
-    COUNT(*) AS "Total Customers",
-    COUNT(CASE WHEN Exited = 1 THEN 1 END) AS "Exited Customers",
-    ROUND(COUNT(CASE WHEN Exited = 1 THEN 1 END) * 100.0 / COUNT(*), 2) AS "Exit Rate"
-FROM customers
-GROUP BY Gender;
+SELECT <br>
+    Gender, <br>
+    COUNT(*) AS "Total Customers", <br>
+    COUNT(CASE WHEN Exited = 1 THEN 1 END) AS "Exited Customers", <br>
+    ROUND(COUNT(CASE WHEN Exited = 1 THEN 1 END) * 100.0 / COUNT(*), 2) AS "Exit Rate" <br>
+FROM customers <br>
+GROUP BY Gender; <br>
+
+![image](https://github.com/user-attachments/assets/d31e1556-ce63-4a04-a849-9eb7c39f4332)
 
 Explanation: This query determines if gender affects churn rates.
 
 3️⃣ Churn Rate by Credit Score
 
-SELECT
-    CASE
-        WHEN CreditScore BETWEEN 350 AND 500 THEN '350-500'
-        WHEN CreditScore BETWEEN 501 AND 650 THEN '501-650'
-        WHEN CreditScore BETWEEN 651 AND 850 THEN '651-850'
-    END AS "Credit Score Category",
-    COUNT(*) AS "Total Customers",
-    COUNT(CASE WHEN Exited = 1 THEN 1 END) AS "Exited Customers",
-    ROUND(COUNT(CASE WHEN Exited = 1 THEN 1 END) * 100.0 / COUNT(*), 2) AS "Exit Rate"
-FROM customers
-GROUP BY
-    CASE
-        WHEN CreditScore BETWEEN 350 AND 500 THEN '350-500'
-        WHEN CreditScore BETWEEN 501 AND 650 THEN '501-650'
-        WHEN CreditScore BETWEEN 651 AND 850 THEN '651-850'
-    END
-ORDER BY "Exit Rate" DESC;
+SELECT <br>
+    CASE <br>
+        WHEN CreditScore BETWEEN 350 AND 500 THEN '350-500' <br>
+        WHEN CreditScore BETWEEN 501 AND 650 THEN '501-650' <br>
+        WHEN CreditScore BETWEEN 651 AND 850 THEN '651-850' <br>
+    END AS "Credit Score Category", <br>
+    COUNT(*) AS "Total Customers", <br>
+    COUNT(CASE WHEN Exited = 1 THEN 1 END) AS "Exited Customers", <br>
+    ROUND(COUNT(CASE WHEN Exited = 1 THEN 1 END) * 100.0 / COUNT(*), 2) AS "Exit Rate" <br>
+FROM customers <br>
+GROUP BY <br>
+    CASE <br>
+        WHEN CreditScore BETWEEN 350 AND 500 THEN '350-500' <br>
+        WHEN CreditScore BETWEEN 501 AND 650 THEN '501-650' <br>
+        WHEN CreditScore BETWEEN 651 AND 850 THEN '651-850' <br>
+    END <br>
+ORDER BY "Exit Rate" DESC; <br>
+
+![image](https://github.com/user-attachments/assets/4fb7bfd3-84ee-4535-b2e4-6fada0eeb4fd)
+
 
 Explanation: This query groups customers based on their credit score and calculates churn rates for each range.
 
 4️⃣ Churn Rate by Complaints
 
-SELECT
-    CASE
-        WHEN Complain = 1 THEN 'Filed Complaint'
-        WHEN Complain = 0 THEN 'No Complaint'
-    END AS "Complaint Status",
-    COUNT(*) AS "Total Customers",
-    COUNT(CASE WHEN Exited = 1 THEN 1 END) AS "Exited Customers",
-    ROUND(COUNT(CASE WHEN Exited = 1 THEN 1 END) * 100.0 / COUNT(*), 2) AS "Exit Rate"
-FROM customers
-GROUP BY
-    CASE
-        WHEN Complain = 1 THEN 'Filed Complaint'
-        WHEN Complain = 0 THEN 'No Complaint'
-    END
-ORDER BY "Exit Rate" DESC;
+SELECT <br>
+    CASE <br>
+        WHEN Complain = 1 THEN 'Filed Complaint' <br>
+        WHEN Complain = 0 THEN 'No Complaint' <br>
+    END AS "Complaint Status", <br>
+    COUNT(*) AS "Total Customers", <br>
+    COUNT(CASE WHEN Exited = 1 THEN 1 END) AS "Exited Customers", <br>
+    ROUND(COUNT(CASE WHEN Exited = 1 THEN 1 END) * 100.0 / COUNT(*), 2) AS "Exit Rate" <br>
+FROM customers <br>
+GROUP BY <br>
+    CASE <br>
+        WHEN Complain = 1 THEN 'Filed Complaint' <br>
+        WHEN Complain = 0 THEN 'No Complaint' <br>
+    END <br>
+ORDER BY "Exit Rate" DESC; <br>
+
+![image](https://github.com/user-attachments/assets/22de12de-7c46-4ab8-876e-12722865c130)
+
 
 Explanation: This query evaluates whether customers who file complaints are more likely to churn.
 
 5️⃣ Churn Rate by Satisfaction Score
 
-SELECT
-    CASE
-        WHEN Satisfaction_Score IN (1,2) THEN 'Low Satisfaction'
-        WHEN Satisfaction_Score IN (3,4) THEN 'Pretty Good'
-        WHEN Satisfaction_Score = 5 THEN 'Great!'
-    END AS "Satisfaction Category",
-    COUNT(*) AS "Total Customers",
-    COUNT(CASE WHEN Exited = 1 THEN 1 END) AS "Exited Customers",
-    ROUND(COUNT(CASE WHEN Exited = 1 THEN 1 END) * 100.0 / COUNT(*), 2) AS "Exit Rate"
-FROM customers
-GROUP BY
-    CASE
-        WHEN Satisfaction_Score IN (1,2) THEN 'Low Satisfaction'
-        WHEN Satisfaction_Score IN (3,4) THEN 'Pretty Good'
-        WHEN Satisfaction_Score = 5 THEN 'Great!'
-    END
-ORDER BY "Exit Rate" DESC;
+SELECT <br>
+    CASE <br>
+        WHEN Satisfaction_Score IN (1,2) THEN 'Low Satisfaction' <br>
+        WHEN Satisfaction_Score IN (3,4) THEN 'Pretty Good' <br>
+        WHEN Satisfaction_Score = 5 THEN 'Great!' <br>
+    END AS "Satisfaction Category", <br>
+    COUNT(*) AS "Total Customers", <br>
+    COUNT(CASE WHEN Exited = 1 THEN 1 END) AS "Exited Customers", <br>
+    ROUND(COUNT(CASE WHEN Exited = 1 THEN 1 END) * 100.0 / COUNT(*), 2) AS "Exit Rate" <br>
+FROM customers <br>
+GROUP BY <br>
+    CASE <br>
+        WHEN Satisfaction_Score IN (1,2) THEN 'Low Satisfaction' <br>
+        WHEN Satisfaction_Score IN (3,4) THEN 'Pretty Good' <br>
+        WHEN Satisfaction_Score = 5 THEN 'Great!' <br>
+    END <br>
+ORDER BY "Exit Rate" DESC; <br>
+
+![image](https://github.com/user-attachments/assets/4fec8e66-85bf-4985-9c82-c5742bd9e6eb)
+
 
 Explanation: This query determines whether lower satisfaction scores correlate with higher churn rates.
 
@@ -158,13 +169,5 @@ Power BI for visualization and reporting
 🏆 Conclusion
 
 By understanding these customer churn patterns, banks can take action to improve customer retention, such as increasing engagement with dissatisfied customers, addressing complaints proactively, and offering better services to high-risk segments.
-
-📌 Next Steps
-
-Implement machine learning models to predict customer churn.
-
-Conduct deeper analysis on transaction behaviors.
-
-Create strategies to retain at-risk customers.
 
 
