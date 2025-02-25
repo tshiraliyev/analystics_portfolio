@@ -56,6 +56,9 @@ GROUP BY<br>
     END<br>
 ORDER BY "Exit Rate" DESC;
 
+![image](https://github.com/user-attachments/assets/457ebbcd-366a-4e2e-9407-8667ea91e15b)
+
+
 Explanation: This query categorizes customers into three age groups and calculates the exit rate for each.
 
 2️⃣ Churn Rate by Gender
