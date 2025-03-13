@@ -167,7 +167,7 @@ In Power BI, I created an interactive dashboard to analyze bank customer churn. 
 
 Older customers (50+) have the highest churn rate.
 
-Gender does not significantly impact churn.
+Gender significantly impact churn.
 
 Customers with lower credit scores tend to leave more often.
 
